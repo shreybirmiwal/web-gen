@@ -15,11 +15,20 @@ function App() {
       dangerouslyAllowBrowser: true
     });
 
+    const jsonExpect = {
+      "Color": "white",
+      "Text": "Weather info here.",
+      "Emoji": ""
+    };
+
     const promptText = `You are a weather station that has a lot of information about the weather (make up random weather facts that are specific like windspeed, rain etc). I will input an age, a job, and a mood. your task is to style text to match the profile of age job and mood. For example, a happy 3 year old child doesn't want to know about the details, but rather what toys they can play with given the weather. Different for a  30 year old scientist. So make things up to HYPER MATCH the engagement of the audience. emoji can be blank if not appropriate.
 
       Age: ${age}
       Job: ${job}
       Mood: ${mood}
+
+      expected JSON format:
+      ${JSON.stringify(jsonExpect)}
     `;
 
     try {
